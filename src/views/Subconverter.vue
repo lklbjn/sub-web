@@ -663,12 +663,12 @@ export default {
           }
         )
         .then((res) => {
-          if (res.data.Code === 1 && res.data.ShortUrl !== "") {
-            this.curtomShortSubUrl = res.data.ShortUrl;
-            this.$copyText(res.data.ShortUrl);
+          if (res.data.shortUrl !== "") {
+            this.curtomShortSubUrl = res.data.shortUrl;
+            this.$copyText(res.data.shortUrl);
             this.$message.success("短链接已复制到剪贴板");
           } else {
-            this.$message.error("短链接获取失败：" + res.data.ShortUrl);
+            this.$message.error("短链接获取失败：" + res.data);
           }
         })
         .catch(() => {
