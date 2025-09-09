@@ -653,8 +653,8 @@ export default {
       data.append("url", this.customSubUrl);
       this.$axios
         .post(
-          shortUrlBackend,
-          { longUrl: btoa(this.customSubUrl) }, // 对 this.customSubUrl 进行Base64编码
+          shortUrlBackend + '/create',
+          { longUrl: `${this.customSubUrl}` }, // 对 this.customSubUrl 进行Base64编码
           {
             headers: {
               // 注意这里应该是 headers 而不是 header
